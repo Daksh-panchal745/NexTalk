@@ -1,0 +1,9 @@
+{
+  "appId": "com.nextalk.app",
+  "appName": "NexTalk",
+  "webDir": "www",
+  "server": {
+    "url": "https://daksh.qzz.io/",
+    "cleartext": false
+  }
+}

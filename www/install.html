@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Install NexTalk</title>
+<meta name="theme-color" content="#070B14">
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#070B14;--txt:#E6E9F2;--mut:#8A93AB;--line:#1E2740;--brand:linear-gradient(135deg,#8B5CF6,#6366F1 45%,#22D3EE)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;background:#04060D;background-image:radial-gradient(800px 500px at 10% -10%,rgba(139,92,246,.22),transparent 60%),radial-gradient(600px 400px at 110% 110%,rgba(34,211,238,.14),transparent 60%);
+  color:var(--txt);font-family:'Plus Jakarta Sans',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;display:flex;align-items:center;justify-content:center;padding:24px 16px}
+.card{width:100%;max-width:420px;background:rgba(15,21,38,.85);border:1px solid rgba(139,92,246,.3);border-radius:28px;padding:30px 24px;backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);box-shadow:0 30px 80px -30px rgba(0,0,0,.9);animation:in .5s cubic-bezier(.2,.8,.2,1) both}
+@keyframes in{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:none}}
+.logo{width:84px;height:84px;border-radius:26px;margin:0 auto 16px;display:block;box-shadow:0 18px 40px -14px rgba(139,92,246,.8)}
+h1{font-size:26px;font-weight:800;text-align:center;letter-spacing:-.02em;background:linear-gradient(90deg,#fff,#C4B5FD 50%,#67E8F9);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mut);text-align:center;font-size:13.5px;margin:6px 0 22px;line-height:1.5}
+.os{display:flex;gap:8px;margin-bottom:20px}
+.os button{flex:1;padding:11px;border-radius:14px;border:1px solid var(--line);background:transparent;color:var(--mut);font:inherit;font-weight:700;font-size:13px;cursor:pointer;transition:all .2s}
+.os button.on{background:rgba(139,92,246,.18);border-color:rgba(139,92,246,.6);color:#fff}
+ol{list-style:none;display:flex;flex-direction:column;gap:12px}
+li{display:flex;gap:12px;align-items:flex-start;background:rgba(255,255,255,.035);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:13px 14px;animation:in .4s cubic-bezier(.2,.8,.2,1) both}
+li:nth-child(2){animation-delay:.07s}li:nth-child(3){animation-delay:.14s}li:nth-child(4){animation-delay:.21s}
+.n{width:28px;height:28px;border-radius:10px;background:var(--brand);color:#fff;font-weight:800;font-size:13px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+li b{display:block;font-size:14px;font-weight:700;margin-bottom:2px}
+li span{font-size:12.5px;color:var(--mut);line-height:1.5}
+.btn{display:block;width:100%;text-align:center;text-decoration:none;margin-top:20px;background:var(--brand);color:#fff;font-weight:700;padding:15px;border-radius:16px;font-size:15px;box-shadow:0 14px 30px -12px rgba(139,92,246,.9);transition:transform .15s}
+.btn:active{transform:scale(.97)}
+.btn.ghost{background:rgba(255,255,255,.05);box-shadow:none;border:1px solid var(--line);color:#C4B5FD;margin-top:10px;display:none}
+.foot{font-size:11px;color:#5C6580;text-align:center;margin-top:16px;line-height:1.6}
+.hide{display:none}
+</style>
+</head>
+<body>
+<div class="card">
+  <img class="logo" src="icons/icon-512.png" alt="NexTalk">
+  <h1>Install NexTalk</h1>
+  <p class="sub">Apne phone par NexTalk ko ek app ki tarah install karo —<br>fast, full-screen, notifications ke saath.</p>
+  <div class="os"><button id="bA">🤖 Android</button><button id="bI">🍎 iPhone / iPad</button></div>
+
+  <ol id="android">
+    <li><div class="n">1</div><div><b>Google Chrome me kholo</b><span>Ye page Chrome browser me khula hona chahiye (koi aur browser nahi).</span></div></li>
+    <li><div class="n">2</div><div><b>Neeche "Open NexTalk" dabao</b><span>App khul jayegi. Chrome khud "Install app / Add to Home screen" ka pop-up dikhayega.</span></div></li>
+    <li><div class="n">3</div><div><b>Pop-up na dikhe to</b><span>Chrome ke upar-right ⋮ menu → <b style="display:inline">"Install app"</b> ya <b style="display:inline">"Add to Home screen"</b> → Install.</span></div></li>
+    <li><div class="n">4</div><div><b>Home screen se kholo</b><span>Ab NexTalk ka icon home screen par hai — wahi se kholo, notifications ALLOW karo.</span></div></li>
+  </ol>
+
+  <ol id="ios" class="hide">
+    <li><div class="n">1</div><div><b>Safari me kholo</b><span>iPhone par ye page <b style="display:inline">Safari</b> me khula hona chahiye (Chrome se install nahi hota).</span></div></li>
+    <li><div class="n">2</div><div><b>Neeche "Open NexTalk" dabao</b><span>App khul jayegi — ab Safari ke neeche <b style="display:inline">Share</b> button (⬆︎ wala box) dabao.</span></div></li>
+    <li><div class="n">3</div><div><b>"Add to Home Screen" chuno</b><span>List me thoda neeche scroll karo → <b style="display:inline">Add to Home Screen</b> → upar-right <b style="display:inline">Add</b>.</span></div></li>
+    <li><div class="n">4</div><div><b>Home screen se kholo</b><span>NexTalk icon se app full-screen khulegi. Notifications ke liye app ke andar ENABLE dabao (iOS 16.4+).</span></div></li>
+  </ol>
+
+  <a class="btn" id="open" href="index.html">Open NexTalk →</a>
+  <a class="btn ghost" id="apk" href="NexTalk.apk" download>⬇ Download Android APK</a>
+  <p class="foot">NexTalk • Android aur iOS dono par kaam karta hai<br>Agar install option na mile, to page ko refresh karke dobara try karo.</p>
+</div>
+<script>
+(function(){
+  var qs = new URLSearchParams(location.search).get('os');
+  var ua = navigator.userAgent || '';
+  var isIOS = /iPhone|iPad|iPod/.test(ua) || (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+  var os = qs === 'ios' || qs === 'android' ? qs : (isIOS ? 'ios' : 'android');
+  var bA = document.getElementById('bA'), bI = document.getElementById('bI');
+  function set(o){
+    os = o;
+    document.getElementById('android').classList.toggle('hide', o !== 'android');
+    document.getElementById('ios').classList.toggle('hide', o !== 'ios');
+    bA.classList.toggle('on', o === 'android'); bI.classList.toggle('on', o === 'ios');
+  }
+  bA.onclick = function(){ set('android'); }; bI.onclick = function(){ set('ios'); };
+  set(os);
+  // If you later upload a real NexTalk.apk next to this file, the download button appears automatically
+  fetch('NexTalk.apk', {method:'HEAD'}).then(function(r){
+    if(r.ok && os === 'android') document.getElementById('apk').style.display = 'block';
+  }).catch(function(){});
+  // Android: catch the browser's install prompt and offer it on tap
+  var deferred = null;
+  window.addEventListener('beforeinstallprompt', function(e){
+    e.preventDefault(); deferred = e;
+    var b = document.getElementById('open');
+    b.textContent = '⬇ Install NexTalk';
+    b.onclick = function(ev){ ev.preventDefault(); deferred.prompt(); deferred.userChoice.then(function(){ location.href = 'index.html'; }); };
+  });
+})();
+</script>
+</body>
+</html>
