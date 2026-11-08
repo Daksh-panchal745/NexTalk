@@ -1,0 +1,49 @@
+name: Build Android APK
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Code download karo
+        uses: actions/checkout@v4
+
+      - name: Node setup
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - name: Java setup
+        uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+
+      - name: Packages install
+        run: |
+          npm install
+          npm install @capacitor/android
+
+      - name: Android project banao
+        run: |
+          npx cap add android
+          npx cap sync android
+
+      - name: APK build
+        run: |
+          cd android
+          chmod +x gradlew
+          ./gradlew assembleDebug
+
+      - name: APK rename
+        run: cp android/app/build/outputs/apk/debug/app-debug.apk NexTalk.apk
+
+      - name: APK upload karo
+        uses: actions/upload-artifact@v4
+        with:
+          name: NexTalk-apk
+          path: NexTalk.apk
