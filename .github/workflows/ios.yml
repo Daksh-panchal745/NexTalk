@@ -23,17 +23,17 @@ jobs:
       - name: iOS project banao
         run: |
           npx cap add ios
-          cd ios/App && pod install
           npx cap sync ios
 
       - name: Unsigned build
         run: |
           cd ios/App
-          xcodebuild -workspace App.xcworkspace \
+          xcodebuild -project App.xcodeproj \
             -scheme App \
             -configuration Release \
             -sdk iphoneos \
             -derivedDataPath build \
+            -skipMacroValidation \
             CODE_SIGN_IDENTITY="" \
             CODE_SIGNING_REQUIRED=NO \
             CODE_SIGNING_ALLOWED=NO
@@ -43,10 +43,10 @@ jobs:
           cd ios/App
           mkdir Payload
           cp -r build/Build/Products/Release-iphoneos/App.app Payload/
-          zip -r ../../MeriApp.ipa Payload
+          zip -r ../../NexTalk.ipa Payload
 
       - name: .ipa upload karo
         uses: actions/upload-artifact@v4
         with:
-          name: MeriApp-ipa
-          path: MeriApp.ipa
+          name: NexTalk-ipa
+          path: NexTalk.ipa
