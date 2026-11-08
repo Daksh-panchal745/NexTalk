@@ -22,7 +22,8 @@ jobs:
 
       - name: iOS project banao
         run: |
-          npx cap add ios || true
+          npx cap add ios
+          cd ios/App && pod install
           npx cap sync ios
 
       - name: Unsigned build
